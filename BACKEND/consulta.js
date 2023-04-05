@@ -1,11 +1,11 @@
 var pg = require("pg");
 const bcrypt = require("bcryptjs");
+require('dotenv').config();
+
 
 const { Client } = require("pg");
-
 const client = new Client({
-  connectionString:
-    "postgres://jpkwhefx:1gseizWAMFQEmBjNbE_bVvpA8tyqMMXi@mahmud.db.elephantsql.com/jpkwhefx",
+  connectionString: process.env.DBURL,
 });
 
 client.connect((err) => {
@@ -16,15 +16,6 @@ client.connect((err) => {
   }
 });
 
-
-
-// const pool = new Pool({
-//   user: "jpkwhefx",
-//   host: "postgres://jpkwhefx:1gseizWAMFQEmBjNbE_bVvpA8tyqMMXi@mahmud.db.elephantsql.com/jpkwhefx",
-//   password: "1gseizWAMFQEmBjNbE_bVvpA8tyqMMXi",
-//   database: "jpkwhefx",
-//   allowExitOnIdle: true,
-// });
 
 const añadirProducto = async ({
   nombre,
