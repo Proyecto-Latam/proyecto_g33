@@ -137,6 +137,7 @@ const ProductsProvider = ({ children }) => {
   // use effect to call the api
   useEffect(() => {
     apiProductos();
+    getResponse()
     // apiPedidos();
   }, []);
 
@@ -172,7 +173,11 @@ const ProductsProvider = ({ children }) => {
   };
 
   // all state and function needed to be called in other components or views
-
+  const getResponse = async () => {
+    const response = await fetch('/.netlify/functions/hello');
+    const data = await response.json();
+    console.log(data);
+  }
   return (
     <ProductsContext.Provider
       value={{
