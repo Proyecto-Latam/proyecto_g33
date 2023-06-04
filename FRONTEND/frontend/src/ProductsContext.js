@@ -172,13 +172,20 @@ const ProductsProvider = ({ children }) => {
     setcart([...cart]);
   };
 
+<<<<<<< HEAD
+=======
+  // all state and function needed to be called in other components or views
+>>>>>>> 656dfa2682b5ba9d21f5e1a36db37e530175c10b
   const getResponse = async () => {
     const response = await fetch('/.netlify/functions/hello');
     const data = await response.json();
     console.log(data);
   }
+<<<<<<< HEAD
   // all state and function needed to be called in other components or views
 
+=======
+>>>>>>> 656dfa2682b5ba9d21f5e1a36db37e530175c10b
   return (
     <ProductsContext.Provider
       value={{
